@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public static class StringExtension {
@@ -19,6 +20,17 @@ public static class StringExtension {
         return TimeSpan.FromMilliseconds(
             double.Parse(self)
         );
+    }
+
+    /*
+     * 文字列に日本語か全角スペースが含まれているか判定するメソッド
+     */
+    public static bool IsJapanese(this string self) {
+        bool isJapanese = Regex.IsMatch(
+            self,
+            @"[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]+|[　]+"
+        );
+        return isJapanese;
     }
 
     /*
