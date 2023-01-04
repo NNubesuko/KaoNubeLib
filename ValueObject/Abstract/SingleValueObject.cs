@@ -3,7 +3,7 @@
 
 using System;
 
-namespace KataokaLib.ValueObject {
+namespace KaoNubeLib.ValueObject {
 
     public abstract class SingleValueObject<T> :
         ISingleValueObject<T>,
