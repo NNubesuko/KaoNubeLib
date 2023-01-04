@@ -1,6 +1,6 @@
 using System;
 
-namespace KaoNubeLib.ValueObject {
+namespace KataokaLib.ValueObject {
 
     public abstract class RangeValueObject<T> :
         IRangeValueObject<T>,
@@ -32,6 +32,10 @@ namespace KaoNubeLib.ValueObject {
 
         public override string ToString() {
             return $"{Start}, {End}";
+        }
+
+        public (T start, T end) ToValue() {
+            return (Start, End);
         }
 
         public override int GetHashCode() {

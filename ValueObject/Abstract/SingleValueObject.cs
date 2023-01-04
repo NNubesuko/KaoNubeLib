@@ -3,7 +3,7 @@
 
 using System;
 
-namespace KaoNubeLib.ValueObject {
+namespace KataokaLib.ValueObject {
 
     public abstract class SingleValueObject<T> :
         ISingleValueObject<T>,
@@ -30,6 +30,10 @@ namespace KaoNubeLib.ValueObject {
 
         public override string ToString() {
             return $"{Value}";
+        }
+
+        public T ToValue() {
+            return Value;
         }
 
         public override int GetHashCode() {
