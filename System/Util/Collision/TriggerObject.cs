@@ -6,30 +6,30 @@ namespace KaoNubeLib.System {
 
     public abstract class TriggerObject : MonoBehaviour {
 
-        protected virtual void OnTriggerEnter2DEvent(Collider2D collider) {
+        protected virtual void OnTriggerEnterEvent(Collider collider) {
         }
 
-        protected virtual void OnTriggerStay2DEvent(Collider2D collider) {
+        protected virtual void OnTriggerStayEvent(Collider collider) {
         }
 
-        protected virtual void OnTriggerEnterAndStay2DEvent(Collider2D collider) {
+        protected virtual void OnTriggerEnterAndStayEvent(Collider collider) {
         }
 
-        protected virtual void OnTriggerExit2DEvent(Collider2D collider) {
+        protected virtual void OnTriggerExitEvent(Collider collider) {
         }
 
-        private void OnTriggerEnter2D(Collider2D collider) {
-            OnTriggerEnter2DEvent(collider);
-            OnTriggerEnterAndStay2DEvent(collider);
+        private void OnTriggerEnter(Collider collider) {
+            OnTriggerEnterEvent(collider);
+            OnTriggerEnterAndStayEvent(collider);
         }
 
-        private void OnTriggerStay2D(Collider2D collider) {
-            OnTriggerStay2DEvent(collider);
-            OnTriggerEnterAndStay2DEvent(collider);
+        private void OnTriggerStay(Collider collider) {
+            OnTriggerStayEvent(collider);
+            OnTriggerEnterAndStayEvent(collider);
         }
 
-        private void OnTriggerExit2D(Collider2D collider) {
-            OnTriggerExit2DEvent(collider);
+        private void OnTriggerExit(Collider collider) {
+            OnTriggerExitEvent(collider);
         }
 
     }
